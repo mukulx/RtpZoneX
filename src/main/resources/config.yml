@@ -1,0 +1,49 @@
+# Don't modify this version number
+config-version: "1.0.0"
+
+defaults:
+  teleport-countdown: 5
+  wait-time: 10
+  min-distance: 100
+  max-distance: 5000
+  cooldown: 60
+  min-players: 1
+  max-players: 10
+
+effects:
+  darkness-enabled: false
+  sound-enabled: true
+  teleport-sound: "ENTITY_ENDERMAN_TELEPORT"
+  sound-volume: 1.0
+  sound-pitch: 1.0
+  particles-enabled: false
+  particle-type: "PORTAL"
+  particle-count: 50
+
+titles:
+  enabled: true
+  fade-in: 10
+  stay: 40
+  fade-out: 10
+
+actionbar:
+  enabled: true
+
+zone-wand:
+  material: BLAZE_ROD
+  name: "&bRTP Zone Wand"
+  lore:
+    - "&7Left-click to set position 1"
+    - "&7Right-click to set position 2"
+    - "&7Use &e/rtpzone create <name> &7to create"
+  glowing: true
+
+safe-location:
+  max-attempts: 50
+  check-lava: true
+  check-water: true
+  min-y: -60
+  max-y: 320
+
+debug:
+  enabled: false

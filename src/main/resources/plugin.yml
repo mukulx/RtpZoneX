@@ -1,0 +1,33 @@
+name: RtpZoneX
+version: ${version}
+main: github.mukulx.rtpzonex.RtpZoneX
+api-version: '1.21'
+folia-supported: true
+author: mukulx
+description: Advanced RTP plugin with zone-based group teleportation
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  rtpzone:
+    description: Main RtpZoneX command
+    usage: /<command> <subcommand>
+    aliases: [rtz, rtpz]
+  rtpzoneadmin:
+    description: RTP Zone admin management
+    usage: /<command> <create|delete|list|wand>
+    permission: rtpzonex.zone.manage
+
+permissions:
+  rtpzonex.use:
+    description: Allows using RTP zones
+    default: true
+  rtpzonex.zone.manage:
+    description: Allows managing RTP zones
+    default: op
+  rtpzonex.admin:
+    description: Full admin access
+    default: op
+  rtpzonex.reload:
+    description: Allows reloading the plugin
+    default: op

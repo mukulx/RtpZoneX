@@ -1,0 +1,302 @@
+zone-list:
+  title: "&6RTP Zones"
+  size: 27
+  
+  zone-item:
+    material: ENDER_PEARL
+    name: "&a&l%zone%"
+    lore:
+      - "&7Players in zone: &e%players%"
+      - "&7Target world: &e%world%"
+      - "&7Wait for players: %wait_status%"
+      - ""
+      - "&eClick to configure"
+  
+  info-item:
+    material: BOOK
+    name: "&e&lZone Information"
+    lore:
+      - "&7Total zones: &e%total%"
+      - "&7Click a zone to configure it"
+  
+  filler:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+
+zone-config:
+  title: "&6Zone Config: %zone%"
+  size: 54
+  
+  items:
+    target-world:
+      slot: 10
+      material: GRASS_BLOCK
+      name: "&a&lTarget World"
+      lore:
+        - "&7Current: &e%value%"
+        - ""
+        - "&eClick to change"
+    
+    min-distance:
+      slot: 11
+      material: COMPASS
+      name: "&b&lMin Distance"
+      lore:
+        - "&7Current: &e%value%"
+        - ""
+        - "&eClick to type a value"
+    
+    max-distance:
+      slot: 12
+      material: SPYGLASS
+      name: "&b&lMax Distance"
+      lore:
+        - "&7Current: &e%value%"
+        - ""
+        - "&eClick to type a value"
+    
+    teleport-countdown:
+      slot: 14
+      material: CLOCK
+      name: "&e&lTeleport Countdown"
+      lore:
+        - "&7Current: &e%value%s"
+        - ""
+        - "&eClick to type a value"
+    
+    cooldown:
+      slot: 15
+      material: SNOWBALL
+      name: "&c&lCooldown"
+      lore:
+        - "&7Current: &e%value%s"
+        - ""
+        - "&eClick to type a value"
+    
+    show-coordinates:
+      slot: 16
+      material-enabled: MAP
+      material-disabled: PAPER
+      name: "&f&lShow Coordinates"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&eClick to toggle"
+    
+    min-players:
+      slot: 19
+      material: PLAYER_HEAD
+      name: "&d&lMin Players"
+      lore:
+        - "&7Current: &e%value%"
+        - ""
+        - "&eClick to type a value"
+    
+    max-players:
+      slot: 20
+      material: SKELETON_SKULL
+      name: "&d&lMax Players"
+      lore:
+        - "&7Current: &e%value%"
+        - ""
+        - "&eClick to type a value"
+    
+    wait-for-players:
+      slot: 22
+      material-enabled: LIME_DYE
+      material-disabled: GRAY_DYE
+      name: "&6&lWait for Players"
+      lore:
+        - "&7Current: %status%"
+        - "&7When enabled, waits for more players"
+        - "&7before teleporting the group."
+        - ""
+        - "&eClick to toggle"
+    
+    wait-time:
+      slot: 23
+      material: HOPPER
+      name: "&6&lWait Time"
+      lore:
+        - "&7Current: &e%value%s"
+        - "&7Time to wait for more players"
+        - ""
+        - "&eClick to type a value"
+    
+    prefix:
+      slot: 25
+      material: NAME_TAG
+      name: "&6&lMessage Prefix"
+      lore:
+        - "&7Current: %value%"
+        - ""
+        - "&eClick to change"
+    
+    darkness:
+      slot: 28
+      material-enabled: BLACK_CONCRETE
+      material-disabled: WHITE_CONCRETE
+      name: "&8&lDarkness Effect"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&eClick to toggle"
+    
+    sound:
+      slot: 30
+      material-enabled: NOTE_BLOCK
+      material-disabled: BARRIER
+      name: "&9&lTeleport Sound"
+      lore:
+        - "&7Enabled: %status%"
+        - "&7Sound: &e%sound%"
+        - ""
+        - "&eLeft-click: &fToggle on/off"
+        - "&eRight-click: &fChange sound"
+    
+    teleport-particles:
+      slot: 32
+      material-enabled: FIREWORK_ROCKET
+      material-disabled: BARRIER
+      name: "&5&lTeleport Particles"
+      lore:
+        - "&7Enabled: %status%"
+        - "&7Type: &e%particle%"
+        - "&7Count: &e%count%"
+        - ""
+        - "&eLeft-click: &fToggle on/off"
+        - "&eRight-click: &fChange particle"
+        - "&eShift+click: &fSet count"
+    
+    zone-particles:
+      slot: 33
+      material-enabled: BLAZE_POWDER
+      material-disabled: GUNPOWDER
+      name: "&d&lZone Boundary Particles"
+      lore:
+        - "&7Current: %status%"
+        - "&7Shows particles around zone edges"
+        - ""
+        - "&eClick to toggle"
+    
+    titles:
+      slot: 34
+      material-enabled: OAK_SIGN
+      material-disabled: BARRIER
+      name: "&f&lTitles"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&eClick to toggle"
+    
+    check-lava:
+      slot: 37
+      material-enabled: LAVA_BUCKET
+      material-disabled: BUCKET
+      name: "&c&lCheck Lava"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&eClick to toggle"
+    
+    check-water:
+      slot: 39
+      material-enabled: WATER_BUCKET
+      material-disabled: BUCKET
+      name: "&b&lCheck Water"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&eClick to toggle"
+    
+    y-range:
+      slot: 41
+      material: BEDROCK
+      name: "&7&lY Range"
+      lore:
+        - "&7Min Y: &e%min%"
+        - "&7Max Y: &e%max%"
+        - ""
+        - "&aLeft-click: &fMin Y +10"
+        - "&cRight-click: &fMin Y -10"
+        - "&aShift+Left: &fMax Y +10"
+        - "&cShift+Right: &fMax Y -10"
+    
+    save-close:
+      slot: 49
+      material: EMERALD_BLOCK
+      name: "&a&lSave & Close"
+      lore:
+        - "&7Click to save and close"
+
+world-selector:
+  title: "&6Select Target World"
+  
+  world-item:
+    overworld-material: GRASS_BLOCK
+    nether-material: NETHERRACK
+    end-material: END_STONE
+    name-selected: "&a✓ %world%"
+    name-unselected: "&e%world%"
+    lore:
+      - "&7Environment: &f%environment%"
+      - ""
+      - "%selection_status%"
+  
+  back-button:
+    material: ARROW
+    name: "&c&lBack"
+    lore:
+      - "&7Return to main menu"
+
+particle-selector:
+  title: "&6Select Particle"
+  size: 27
+  
+  particle-item:
+    material-selected: LIME_STAINED_GLASS_PANE
+    material-unselected: WHITE_STAINED_GLASS_PANE
+    name-selected: "&a✓ %particle%"
+    name-unselected: "&e%particle%"
+    lore-selected:
+      - ""
+      - "&a✓ Currently selected"
+    lore-unselected:
+      - ""
+      - "&eClick to select"
+  
+  back-button:
+    slot: 26
+    material: ARROW
+    name: "&c&lBack"
+    lore:
+      - "&7Return to main menu"
+
+sound-selector:
+  title: "&6Select Sound"
+  size: 18
+  
+  sound-item:
+    material-selected: LIME_STAINED_GLASS_PANE
+    material-unselected: NOTE_BLOCK
+    name-selected: "&a✓ %sound%"
+    name-unselected: "&e%sound%"
+    lore-selected:
+      - ""
+      - "&a✓ Currently selected"
+    lore-unselected:
+      - ""
+      - "&eClick to select & preview"
+  
+  back-button:
+    slot: 17
+    material: ARROW
+    name: "&c&lBack"
+    lore:
+      - "&7Return to main menu"
+
+status:
+  enabled: "&aEnabled"
+  disabled: "&cDisabled"
+  yes: "&aYes"
+  no: "&cNo"

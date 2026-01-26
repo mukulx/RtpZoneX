@@ -1,0 +1,76 @@
+prefix: "&8[&bRtpZoneX&8] &r"
+
+messages:
+  teleport-cooldown: "&cYou must wait &e%time% &cseconds before teleporting again."
+  teleport-success: "&aTeleported successfully!"
+  teleport-failed: "&cTeleportation failed. Please try again."
+  teleport-cancelled: "&cTeleportation cancelled."
+  no-safe-location: "&cCould not find a safe location. Please try again."
+  teleported-to: "&aTeleported to: &e%x%, %y%, %z% &7in &f%world%"
+  
+  zone-entered: "&aYou entered the &e%zone% &azone!"
+  zone-left: "&eYou left the &6%zone% &ezone."
+  zone-full: "&cThis zone is full!"
+  zone-created: "&aZone &e%zone% &ahas been created!"
+  zone-deleted: "&cZone &e%zone% &chas been deleted."
+  zone-exists: "&cA zone with that name already exists!"
+  zone-not-found: "&cZone &e%zone% &cnot found!"
+  zone-list-header: "&6=== RTP Zones ==="
+  zone-list-entry: "&7- &e%zone% &7(%players% players)"
+  zone-list-empty: "&7No zones have been created yet."
+  
+  wand-given: "&aYou received the RTP Zone Wand!"
+  pos1-set: "&aPosition 1 set at &e%x%&a, &e%y%&a, &e%z%"
+  pos2-set: "&aPosition 2 set at &e%x%&a, &e%y%&a, &e%z%"
+  select-both-positions: "&cYou need to select both positions first! Use the wand."
+  
+  player-joined-group: "&e%player% &7joined the teleport group!"
+  player-left-group: "&e%player% &7left the teleport group."
+  group-teleporting: "&aGroup teleporting in &e%countdown% &aseconds..."
+  waiting-for-players: "&eWaiting for more players... &7(%count%/%max%)"
+  all-players-left: "&cAll players left the zone."
+  not-enough-players: "&cNot enough players! Need at least &e%min% &cplayers, but only &e%current% &cpresent."
+  
+  no-permission: "&cYou don't have permission to do that!"
+  player-only: "&cThis command can only be used by players!"
+  
+  config-reloaded: "&aConfiguration reloaded!"
+  config-saved: "&aConfiguration saved!"
+  zone-config-saved: "&aZone configuration saved!"
+  
+  invalid-number: "&cPlease enter a valid number!"
+  invalid-world: "&cThat world does not exist!"
+  invalid-args: "&cInvalid arguments! Usage: %usage%"
+  same-world-required: "&cBoth positions must be in the same world!"
+  
+  toggle-enabled: "&aEnabled"
+  toggle-disabled: "&cDisabled"
+  setting-changed: "&7%setting%: %status%"
+  
+  help-header: "&6=== RtpZoneX Help ==="
+  help-RtpZoneX: "&e/RtpZoneX &7- Main plugin command"
+  help-RtpZoneX-reload: "&e/RtpZoneX reload &7- Reload configuration"
+  help-rtpzone-wand: "&e/rtpzone wand &7- Get the zone selection wand"
+  help-rtpzone-create: "&e/rtpzone create <name> &7- Create a new zone"
+  help-rtpzone-delete: "&e/rtpzone delete <name> &7- Delete a zone"
+  help-rtpzone-list: "&e/rtpzone list &7- List all zones"
+  help-rtpzone-config: "&e/rtpzone config &7- Open zone configuration GUI"
+
+titles:
+  countdown:
+    title: "&aTeleporting..."
+    subtitle: "&7You and &e%players% &7will teleport in &#FF0000%countdown%s"
+    subtitle-solo: "&7Only you will teleport in &#FF0000%countdown%s"
+  waiting:
+    title: "&aWaiting for players..."
+    subtitle: "&7%count% players ready. Teleporting in &#FF0000%wait%s"
+  teleported:
+    title: "&a&lTeleported!"
+    subtitle: "&7You arrived at a random location"
+  teleported-coords:
+    subtitle: "&7Location: &e%x%, %y%, %z%"
+
+actionbar:
+  countdown: "&a⏱ &fTeleporting in &a%countdown% &fseconds..."
+  teleported: "&a✓ &7Successfully teleported!"
+  waiting: "&6⏳ &7Waiting for players... &e%count%/%max%"
