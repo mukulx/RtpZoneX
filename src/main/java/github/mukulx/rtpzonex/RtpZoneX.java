@@ -17,6 +17,8 @@
  */
 package github.mukulx.rtpzonex;
 
+import com.alessiodp.libby.BukkitLibraryManager;
+import com.alessiodp.libby.Library;
 import github.mukulx.rtpzonex.commands.RtpZoneCommand;
 import github.mukulx.rtpzonex.commands.RtpZoneAdminCommand;
 import github.mukulx.rtpzonex.listeners.ChatInputListener;
@@ -59,6 +61,9 @@ public class RtpZoneX extends JavaPlugin {
     public void onEnable() {
         instance = this;
         
+        // Load runtime dependencies
+        loadLibraries();
+        
         printStartupBanner();
         
         this.configManager = new ConfigManager(this);
@@ -98,6 +103,11 @@ public class RtpZoneX extends JavaPlugin {
             placeholders.register();
             getComponentLogger().info(Component.text("PlaceholderAPI hook enabled!", NamedTextColor.AQUA));
         }
+    }
+    
+    private void loadLibraries() {
+        BukkitLibraryManager libraryManager = new BukkitLibraryManager(this);
+        getComponentLogger().info(Component.text("Library loader initialized", NamedTextColor.GREEN));
     }
     
     private void startZoneParticleTask() {

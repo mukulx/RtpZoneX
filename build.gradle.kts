@@ -1,6 +1,7 @@
 plugins {
     java
     id("com.github.hierynomus.license") version "0.16.1"
+    id("com.gradleup.shadow") version "9.2.0"
 }
 
 group = "github.mukulx"
@@ -10,6 +11,8 @@ repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
+    maven("https://repo.alessiodp.com/releases/")
+    maven("https://repo.alessiodp.com/snapshots/")
 }
 
 configurations.all {
@@ -19,10 +22,15 @@ configurations.all {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
     compileOnly("me.clip:placeholderapi:2.11.6")
+    implementation("com.alessiodp.libby:libby-bukkit:2.0.0-SNAPSHOT")
 }
 
 java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 license {
@@ -33,8 +41,14 @@ license {
 }
 
 tasks {
-    jar {
+    shadowJar {
         archiveFileName.set("RtpZoneX-${project.version}.jar")
+        relocate("com.alessiodp.libby", "github.mukulx.rtpzonex.libs.libby")
+        minimize()
+    }
+    
+    build {
+        dependsOn(shadowJar)
     }
     
     processResources {
