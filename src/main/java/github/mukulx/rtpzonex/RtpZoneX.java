@@ -18,7 +18,6 @@
 package github.mukulx.rtpzonex;
 
 import com.alessiodp.libby.BukkitLibraryManager;
-import com.alessiodp.libby.Library;
 import github.mukulx.rtpzonex.commands.RtpZoneCommand;
 import github.mukulx.rtpzonex.commands.RtpZoneAdminCommand;
 import github.mukulx.rtpzonex.listeners.ChatInputListener;
@@ -38,10 +37,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitTask;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class RtpZoneX extends JavaPlugin {
 
