@@ -357,7 +357,7 @@ public class GUIListener implements Listener {
             zone.getConfig().setSoundEnabled(true);
             player.playSound(player.getLocation(), selectedSound, 1.0f, 1.0f);
             player.sendMessage(plugin.getConfigManager().colorize(
-                    plugin.getConfigManager().getPrefix() + "&aSound set to: &e" + selectedSound.name()));
+                    plugin.getConfigManager().getPrefix() + "&aSound set to: &e" + selectedSound.toString()));
             player.closeInventory();
             github.mukulx.rtpzonex.utils.SchedulerUtil.runTaskLater(plugin, () -> {
                 new ZoneConfigGUI(plugin, zone, player).openMainMenu();

@@ -162,7 +162,7 @@ public class ZoneManager {
         zonesConfig.set(path + ".cooldown", config.getCooldown());
         zonesConfig.set(path + ".darkness-enabled", config.isDarknessEnabled());
         zonesConfig.set(path + ".sound-enabled", config.isSoundEnabled());
-        zonesConfig.set(path + ".teleport-sound", config.getTeleportSound().name());
+        zonesConfig.set(path + ".teleport-sound", config.getTeleportSound().toString());
         zonesConfig.set(path + ".sound-volume", config.getSoundVolume());
         zonesConfig.set(path + ".sound-pitch", config.getSoundPitch());
         zonesConfig.set(path + ".particles-enabled", config.isParticlesEnabled());

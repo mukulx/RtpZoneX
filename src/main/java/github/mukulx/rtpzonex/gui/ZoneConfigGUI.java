@@ -136,7 +136,7 @@ public class ZoneConfigGUI {
                 config.isSoundEnabled() ? Material.NOTE_BLOCK : Material.BARRIER,
                 "&9&lTeleport Sound",
                 "&7Enabled: " + (config.isSoundEnabled() ? "&aYes" : "&cNo"),
-                "&7Sound: &e" + config.getTeleportSound().name(),
+                "&7Sound: &e" + config.getTeleportSound().toString(),
                 "",
                 "&eLeft-click: &fToggle on/off",
                 "&eRight-click: &fChange sound"));
@@ -257,7 +257,7 @@ public class ZoneConfigGUI {
         player.openInventory(inv);
     }
     private String formatSoundName(Sound sound) {
-        String name = sound.name();
+        String name = sound.toString();
         return name.replace("_", " ");
     }
     private ItemStack createItem(Material material, String name, String... lore) {
