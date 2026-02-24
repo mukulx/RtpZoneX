@@ -61,8 +61,14 @@ public class RtpZoneX extends JavaPlugin {
     public void onEnable() {
         instance = this;
         
-        // Load runtime dependencies
-        loadLibraries();
+        try {
+            loadLibraries();
+        } catch (Exception e) {
+            getComponentLogger().error(Component.text("Failed to load runtime dependencies!", NamedTextColor.RED));
+            getComponentLogger().error(Component.text("Error: " + e.getMessage(), NamedTextColor.RED));
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
         
         printStartupBanner();
         
@@ -85,8 +91,11 @@ public class RtpZoneX extends JavaPlugin {
         hologramManager.startHologramUpdates();
         startZoneParticleTask();
         
-        getCommand("rtpzone").setExecutor(new RtpZoneCommand(this));
-        getCommand("rtpzoneadmin").setExecutor(new RtpZoneAdminCommand(this));
+        if (!registerCommands()) {
+            getComponentLogger().error(Component.text("Failed to register commands! Check plugin.yml", NamedTextColor.RED));
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
         
         this.guiListener = new GUIListener(this);
         this.chatInputListener = new ChatInputListener(this);
@@ -106,8 +115,37 @@ public class RtpZoneX extends JavaPlugin {
     }
     
     private void loadLibraries() {
-        BukkitLibraryManager libraryManager = new BukkitLibraryManager(this);
-        getComponentLogger().info(Component.text("Library loader initialized", NamedTextColor.GREEN));
+        try {
+            BukkitLibraryManager libraryManager = new BukkitLibraryManager(this);
+            getComponentLogger().info(Component.text("Library loader initialized", NamedTextColor.GREEN));
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to initialize library loader", e);
+        }
+    }
+    
+    private boolean registerCommands() {
+        try {
+            var rtpzoneCommand = getCommand("rtpzone");
+            var rtpzoneadminCommand = getCommand("rtpzoneadmin");
+            
+            if (rtpzoneCommand == null) {
+                getComponentLogger().error(Component.text("Command 'rtpzone' not found in plugin.yml", NamedTextColor.RED));
+                return false;
+            }
+            
+            if (rtpzoneadminCommand == null) {
+                getComponentLogger().error(Component.text("Command 'rtpzoneadmin' not found in plugin.yml", NamedTextColor.RED));
+                return false;
+            }
+            
+            rtpzoneCommand.setExecutor(new RtpZoneCommand(this));
+            rtpzoneadminCommand.setExecutor(new RtpZoneAdminCommand(this));
+            
+            return true;
+        } catch (Exception e) {
+            getComponentLogger().error(Component.text("Error registering commands: " + e.getMessage(), NamedTextColor.RED));
+            return false;
+        }
     }
     
     private void startZoneParticleTask() {
